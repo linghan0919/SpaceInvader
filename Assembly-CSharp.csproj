@@ -46,7 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AlienBullletScrpt.cs" />
+     <Compile Include="Assets\Scripts\AlienGroup.cs" />
+     <Compile Include="Assets\Scripts\AlienScript.cs" />
+     <Compile Include="Assets\Scripts\BgiScript.cs" />
      <Compile Include="Assets\Scripts\FortScript.cs" />
+     <Compile Include="Assets\Scripts\GlobalScript.cs" />
+     <Compile Include="Assets\Scripts\HomeScript.cs" />
+     <Compile Include="Assets\Scripts\ScoreUI.cs" />
      <Compile Include="Assets\Scripts\ShipBulletScript.cs" />
      <Compile Include="Assets\Scripts\ShipScript.cs" />
  <Reference Include="UnityEngine.UI">

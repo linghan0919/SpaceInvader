@@ -37,9 +37,14 @@ public class ShipScript : MonoBehaviour {
 		if (Input.GetKeyDown ("space") && Time.time > nextFire) {
 			Debug.Log ("Player's ship fire");
 			nextFire = Time.time + fireRate;
-			Instantiate(shipBullet, ship.position, Quaternion.identity);
-
-
+			Vector3 bulletPos = ship.position;
+			bulletPos.z += 1;
+			Instantiate(shipBullet, bulletPos, Quaternion.identity);
 		}
+	}
+
+	public void Die() {
+		// TODO: LOSE
+		Destroy (gameObject);
 	}
 }

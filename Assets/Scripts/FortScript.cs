@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FortScript : MonoBehaviour {
 
-	public int life = 2;
+	public int life = 3;
 
 	// Update is called once per frame
 	void Update () {

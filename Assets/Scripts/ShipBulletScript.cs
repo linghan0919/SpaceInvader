@@ -8,7 +8,6 @@ public class ShipBulletScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thrust.z = 400.0f;
-
 		GetComponent<Rigidbody> ().drag = 0;
 		GetComponent<Rigidbody> ().AddRelativeForce (thrust);
 	}
@@ -20,18 +19,24 @@ public class ShipBulletScript : MonoBehaviour {
 			Destroy (gameObject);
 	}
 
-	/*
+
 	void OnCollisionEnter(Collision collision) {
 		Collider collider = collision.collider;
 
 		if (collider.CompareTag ("Alien")) {
-			Alien alien = collider.gameObject.GetComponent<Alien>();
+			AlienScript alien = collider.gameObject.GetComponent<AlienScript>();
 			alien.Die();
 			Destroy(gameObject);
-		} else if (collider.CompareTag("Fort"){
-			// TODO
-		} else {
-			// TODO
 		}
-	}*/
+		else if (collider.CompareTag("Fort")) {
+			Debug.Log ("collided with fort");
+			FortScript fort = collider.gameObject.GetComponent<FortScript>();
+			fort.life -= 1;
+			Destroy(gameObject);
+		}
+		else {
+			Debug.Log ("collided with " + collider.tag);
+			Destroy(gameObject);
+		}
+	}
 }
