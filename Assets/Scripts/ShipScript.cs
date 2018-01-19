@@ -8,6 +8,7 @@ public class ShipScript : MonoBehaviour {
 	public float maxBound, minBound;
 	public GameObject shipBullet;
 	public float fireRate;
+	public AudioClip deathSound;
 
 	private float nextFire;
 
@@ -15,8 +16,8 @@ public class ShipScript : MonoBehaviour {
 	void Start () {
 		ship = GetComponent<Transform> ();
 		speed = 0.1f;
-		maxBound = 15.0f;
-		minBound = -15.0f;
+		maxBound = 10.0f;
+		minBound = -10.0f;
 	}
 
 	// Use to control the movement of the ship
@@ -44,7 +45,9 @@ public class ShipScript : MonoBehaviour {
 	}
 
 	public void Die() {
-		// TODO: LOSE
+		AudioSource.PlayClipAtPoint (deathSound, gameObject.transform.position);
+		GlobalScript.result = false;
 		Destroy (gameObject);
+		Application.LoadLevel ("WinloseScene");
 	}
 }

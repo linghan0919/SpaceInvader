@@ -8,13 +8,11 @@ public class ScoreUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GameObject globalObject = GameObject.Find ("GlobalObject");
-		gs = globalObject.GetComponent<GlobalScript> ();
 		scoreText = gameObject.GetComponent<GUIText> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		scoreText.text = " Score: " + gs.score.ToString ();
+		scoreText.text = "Score: " + GlobalScript.score.ToString ();
 	}
 }

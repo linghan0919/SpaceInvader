@@ -3,11 +3,13 @@ using System.Collections;
 
 public class GlobalScript : MonoBehaviour {
 
-	public int score;
+	public static int score = 0;
+	public static bool result = false;
+	public AudioClip bgm;
 
 	// Use this for initialization
 	void Start () {
-		score = 0;
+		AudioSource.PlayClipAtPoint (bgm, gameObject.transform.position);
 	}
 	
 	// Update is called once per frame

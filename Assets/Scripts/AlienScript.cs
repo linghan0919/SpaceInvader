@@ -5,6 +5,7 @@ public class AlienScript : MonoBehaviour {
 
 	public GameObject deathExplosion;
 	public int pointValue;
+	public AudioClip deathSound;
 
 	// Use this for initialization
 	void Start () {
@@ -17,10 +18,11 @@ public class AlienScript : MonoBehaviour {
 	}
 
 	public void Die() {
+		AudioSource.PlayClipAtPoint (deathSound, gameObject.transform.position);
 		Instantiate (deathExplosion, gameObject.transform.position, Quaternion.identity);
-		GameObject globalObj = GameObject.Find ("GlobalObject");
-		GlobalScript gs = globalObj.GetComponent<GlobalScript> ();
-		gs.score += pointValue;
+		//GameObject globalObj = GameObject.Find ("GlobalObject");
+		//GlobalScript gs = globalObj.GetComponent<GlobalScript> ();
+		GlobalScript.score += pointValue;
 
 		Destroy (gameObject);
 	}
