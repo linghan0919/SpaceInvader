@@ -9,6 +9,8 @@ public class GlobalScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		score = 0;
+		result = false;
 		AudioSource.PlayClipAtPoint (bgm, gameObject.transform.position);
 	}
 	
